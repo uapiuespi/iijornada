@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lançamento | Educação 4.0, Inovação e Ética em Pesquisa em Tempos de I.A — UAPI/UESPI</title>
+  <meta name="description" content="Lançamento oficial dos Volumes 1 e 2 da coletânea da II Jornada Científica da Universidade Aberta do Piauí (UAPI/UESPI)." />
+  <style>
+    /* =========================================================
+       IDENTIDADE VISUAL (Paleta extraída das capas Vol. 1 e 2)
+       ========================================================= */
+    :root {
+      --bg-base: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --text-main: #111827;
+      --text-muted: #475569;
+      --border-subtle: #CBD5E1;
+
+      /* Volume 1 — Azul-Petróleo e Celeste */
+      --vol1-primary: #0E6E8E;
+      --vol1-dark: #094E66;
+      --vol1-soft: #E3F3FA;
+
+      /* Volume 2 — Verde-Esmeralda e Menta */
+      --vol2-primary: #129468;
+      --vol2-dark: #0C6B4B;
+      --vol2-soft: #E4F6EC;
+
+      --radius: 14px;
+      --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.10);
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* =========================================================
+       BARRA SUPERIOR FIXA (CONTROLES HÍBRIDOS)
+       ========================================================= */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 24px;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .topbar-brand {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-dots {
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    .brand-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-mode,
+    .btn-control {
+      appearance: none;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-mode {
+      background: var(--text-main);
+      color: #FFFFFF;
+      border-color: var(--text-main);
+    }
+
+    .btn-mode:hover {
+      background: var(--vol1-primary);
+      border-color: var(--vol1-primary);
+    }
+
+    .btn-control:hover {
+      border-color: var(--vol1-primary);
+      color: var(--vol1-primary);
+    }
+
+    .slide-counter {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #E2E8F0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      display: none;
+    }
+
+    .presentation-only {
+      display: none;
+    }
+
+    /* =========================================================
+       LAYOUT GERAL (MODO SITE — ROLAGEM CONTÍNUA)
+       ========================================================= */
+    main {
+      padding-top: 64px;
+    }
+
+    .slide {
+      min-height: calc(100vh - 64px);
+      padding: 56px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .slide:last-child {
+      border-bottom: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      background: #E2E8F0;
+      color: #1E293B;
+    }
+
+    .eyebrow.vol1 {
+      background: var(--vol1-soft);
+      color: var(--vol1-dark);
+    }
+
+    .eyebrow.vol2 {
+      background: var(--vol2-soft);
+      color: var(--vol2-dark);
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 3.6vw, 3.1rem);
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.35rem);
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      font-size: clamp(1rem, 1.45vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 72ch;
+    }
+
+    /* =========================================================
+       SLIDE 1 — CAPA DO LANÇAMENTO
+       ========================================================= */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 26px;
+    }
+
+    .badge {
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    .hero-covers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .cover-card {
+      background: var(--bg-card);
+      padding: 10px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+      text-align: center;
+      transition: transform 0.25s ease;
+    }
+
+    .cover-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .cover-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      background: #E2E8F0;
+    }
+
+    .cover-caption {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .cover-caption.v1 { color: var(--vol1-primary); }
+    .cover-caption.v2 { color: var(--vol2-primary); }
+
+    /* =========================================================
+       SLIDE 2 — UAPI E II JORNADA CIENTÍFICA
+       ========================================================= */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 26px 0;
+    }
+
+    .stat-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-num {
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--vol1-primary);
+      margin-bottom: 6px;
+    }
+
+    .stat-box:nth-child(even) .stat-num {
+      color: var(--vol2-primary);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .info-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .course-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .course-list li {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--bg-base);
+      border-left: 4px solid var(--vol1-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .course-list li:nth-child(2) { border-left-color: var(--vol2-primary); }
+    .course-list li:nth-child(3) { border-left-color: #0F766E; }
+
+    /* =========================================================
+       SLIDES 3 E 4 — VOLUMES 1 E 2
+       ========================================================= */
+    .vol-slide-1 { background: linear-gradient(180deg, #FFFFFF 0%, var(--vol1-soft) 100%); }
+    .vol-slide-2 { background: linear-gradient(180deg, #FFFFFF 0%, var(--vol2-soft) 100%); }
+
+    .vol-layout {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .vol-cover-frame {
+      background: var(--bg-card);
+      padding: 10px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .vol-cover-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+    }
+
+    .meta-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 20px;
+    }
+
+    .meta-chip {
+      font-size: 0.84rem;
+      font-weight: 600;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 5px 11px;
+      border-radius: 8px;
+      color: var(--text-main);
+    }
+
+    .units-summary {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .unit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-left: 5px solid var(--vol1-primary);
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .vol-slide-2 .unit-card {
+      border-left-color: var(--vol2-primary);
+    }
+
+    .unit-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .unit-count {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--vol1-soft);
+      color: var(--vol1-dark);
+      white-space: nowrap;
+    }
+
+    .vol-slide-2 .unit-count {
+      background: var(--vol2-soft);
+      color: var(--vol2-dark);
+    }
+
+    /* Sumário expansível (Accordion) — Apenas no Modo Site */
+    .site-only-toc {
+      margin-top: 22px;
+    }
+
+    .toc-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    details.accordion {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    details.accordion summary {
+      padding: 13px 16px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+
+    details.accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.accordion summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--vol1-primary);
+      flex-shrink: 0;
+    }
+
+    .vol-slide-2 details.accordion summary::after {
+      color: var(--vol2-primary);
+    }
+
+    details.accordion[open] summary::after {
+      content: "−";
+    }
+
+    .chapter-list {
+      padding: 0 18px 16px 34px;
+      border-top: 1px solid #E2E8F0;
+      margin-top: 4px;
+      padding-top: 12px;
+    }
+
+    .chapter-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+
+    .chapter-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+       SLIDE 5 — EXPEDIENTE E CONSELHO EDITORIAL
+       ========================================================= */
+    .organizers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 22px 0 26px;
+    }
+
+    .role-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .role-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--vol1-primary);
+      margin-bottom: 6px;
+    }
+
+    .role-card:nth-child(3) .role-label {
+      color: var(--vol2-primary);
+    }
+
+    .role-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 18px;
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .board-grid li {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      padding: 7px 12px;
+      background: var(--bg-base);
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+    }
+
+    /* =========================================================
+       SLIDE 6 — TELA FINAL (QR CODE E DOWNLOAD)
+       ========================================================= */
+    .final-slide {
+      background: linear-gradient(135deg, var(--vol1-soft) 0%, #FFFFFF 50%, var(--vol2-soft) 100%);
+      text-align: center;
+    }
+
+    .qr-card {
+      max-width: 680px;
+      margin: 26px auto 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    #qrcode-canvas {
+      width: 260px;
+      height: 260px;
+      image-rendering: pixelated;
+      border: 12px solid #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.10);
+      background: #FFFFFF;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      background: linear-gradient(90deg, var(--vol1-primary), var(--vol2-primary));
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .final-note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* =========================================================
+       MODO APRESENTAÇÃO (SLIDES EM TELA CHEIA PARA AUDITÓRIO)
+       ========================================================= */
+    body.presentation-mode {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    body.presentation-mode main {
+      padding-top: 60px;
+      height: 100vh;
+    }
+
+    body.presentation-mode .slide {
+      display: none;
+      height: calc(100vh - 60px);
+      min-height: 0;
+      padding: 28px 40px;
+      border-bottom: none;
+      overflow-y: auto;
+      animation: fadeSlide 0.28s ease;
+    }
+
+    body.presentation-mode .slide.active {
+      display: flex;
+    }
+
+    body.presentation-mode .site-only-toc {
+      display: none !important;
+    }
+
+    body.presentation-mode .presentation-only,
+    body.presentation-mode .slide-counter {
+      display: inline-flex;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================================
+       RESPONSIVIDADE (CELULARES E TABLETS)
+       ========================================================= */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .vol-layout,
+      .info-two-col,
+      .organizers-grid,
+      .board-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .vol-cover-frame {
+        max-width: 240px;
+        margin: 0 auto;
+      }
+
+      .topbar {
+        padding: 10px 14px;
+      }
+
+      .topbar-brand span.brand-text {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR DE NAVEGAÇÃO E ALTERNÂNCIA DE MODO -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-dots" aria-hidden="true">
+        <span style="background: var(--vol1-primary);"></span>
+        <span style="background: var(--vol2-primary);"></span>
+      </span>
+      <span class="brand-text">II Jornada Científica da UAPI • Lançamento Editorial</span>
+    </div>
+
+    <div class="topbar-actions">
+      <span class="slide-counter" id="slideCounter" aria-live="polite">1 / 6</span>
+      <button type="button" class="btn-control presentation-only" id="btnPrev" title="Slide anterior (Seta Esquerda)">← Anterior</button>
+      <button type="button" class="btn-control presentation-only" id="btnNext" title="Próximo slide (Seta Direita)">Próximo →</button>
+      <button type="button" class="btn-control presentation-only" id="btnFullscreen" title="Tela cheia (Tecla F)">⛶ Tela Cheia</button>
+      <button type="button" class="btn-mode" id="btnToggleMode">▶ Modo Apresentação</button>
+    </div>
+  </header>
+
+  <main id="slidesContainer">
+
+    <!-- =======================================================
+         SLIDE 1 — CAPA DO LANÇAMENTO
+         ======================================================= -->
+    <section class="slide active" id="slide-1" aria-label="Capa do Lançamento">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">II Jornada Científica da Universidade Aberta do Piauí • 2026</span>
+          <h1>Educação 4.0, Inovação e Ética em Pesquisa em Tempos de I.A</h1>
+          <p class="lead">
+            Lançamento oficial da coletânea em <strong>dois volumes</strong> (versões <strong>impressa e digital</strong>), reunindo a produção científica de estudantes, professores e pesquisadores vinculados à UAPI/UESPI.
+          </p>
+          <div class="hero-badges">
+            <span class="badge">📚 2 Volumes • 1ª Edição (2026)</span>
+            <span class="badge">📝 42 Trabalhos Publicados</span>
+            <span class="badge">🖨️ Edição Impressa e Digital</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">
+            <strong>Organizadores:</strong> Ana Angélica Fonseca Costa e Daniel César Menêses de Carvalho
+          </p>
+        </div>
+
+        <div class="hero-covers">
+          <figure class="cover-card">
+            <img src="capa-vol1.jpg" alt="Capa do Volume 1: Administração, Gestão e Sociedade" loading="eager" />
+            <figcaption class="cover-caption v1">Volume 1: Administração, Gestão e Sociedade</figcaption>
+          </figure>
+          <figure class="cover-card">
+            <img src="capa-vol2.jpg" alt="Capa do Volume 2: Tecnologia, Inovação Educacional e Energias Renováveis" loading="eager" />
+            <figcaption class="cover-caption v2">Volume 2: Tecnologia, Inovação Educacional e Energias Renováveis</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SLIDE 2 — A UAPI E A II JORNADA CIENTÍFICA (2026)
+         ======================================================= -->
+    <section class="slide" id="slide-2" aria-label="A UAPI e a II Jornada Científica">
+      <div class="container">
+        <span class="eyebrow">Interiorização, Pesquisa e Extensão</span>
+        <h2>A UAPI e a II Jornada Científica (2026)</h2>
+        <p class="lead">
+          Criada em 2016, a Universidade Aberta do Piauí (UAPI) democratiza o ensino superior no estado, integrando ensino, pesquisa e extensão em uma rede capilarizada. Em 2026, a II Jornada Científica registrou envio recorde de trabalhos, culminando nesta obra em dois volumes.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-num">183</div>
+            <div class="stat-label">Polos alcançados no Piauí</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Cursos integrados na Jornada</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Unidades temáticas nos livros</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">42</div>
+            <div class="stat-label">Trabalhos publicados (22 + 20)</div>
+          </div>
+        </div>
+
+        <div class="info-two-col">
+          <div class="panel">
+            <h3>Cursos Participantes</h3>
+            <ul class="course-list">
+              <li>Bacharelado em Administração</li>
+              <li>Tecnologia em Sistemas para Internet</li>
+              <li>Tecnologia em Energias Renováveis</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Apoio e Fomento Institucional</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">
+              A realização da II Jornada Científica e a publicação dos volumes contaram com o suporte do <strong>Governo do Estado do Piauí</strong>, da <strong>SEDUC</strong>, da gestão superior da <strong>UESPI</strong> — especialmente <strong>PROP</strong> e <strong>PREX</strong> (fomento via <em>Edital PROP/PREX Nº 12/2026</em>) —, da entidade financiadora <strong>FAPEPI</strong> e do <strong>NEAD/UESPI</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SLIDE 3 — VOLUME 1
+         ======================================================= -->
+    <section class="slide vol-slide-1" id="slide-3" aria-label="Volume 1">
+      <div class="container vol-layout">
+        <div class="vol-cover-frame">
+          <img src="capa-vol1.jpg" alt="Capa do Volume 1" loading="lazy" />
+        </div>
+
+        <div>
+          <span class="eyebrow vol1">Volume 1 • 3 Unidades • 22 Trabalhos</span>
+          <h2>Administração, Gestão e Sociedade</h2>
+          <div class="meta-chips">
+            <span class="meta-chip">1ª Edição • Dez/2026</span>
+            <span class="meta-chip">Teresina, PI • Ed. dos Autores</span>
+            <span class="meta-chip">ISBN 978-65-02-51810-6</span>
+            <span class="meta-chip">CDD-378</span>
+          </div>
+
+          <div class="units-summary">
+            <div class="unit-card">
+              <div class="unit-header-row">
+                <strong>Unidade I — Empreendedorismo, Inovação e Sustentabilidade em Negócios</strong>
+                <span class="unit-count">8 capítulos</span>
+              </div>
+            </div>
+            <div class="unit-card">
+              <div class="unit-header-row">
+                <strong>Unidade II — Gestão Institucional, Políticas Públicas e Desenvolvimento Humano</strong>
+                <span class="unit-count">5 capítulos</span>
+              </div>
+            </div>
+            <div class="unit-card">
+              <div class="unit-header-row">
+                <strong>Unidade III — Relatos de Pesquisa e Ensaios Acadêmicos (Resumos Expandidos)</strong>
+                <span class="unit-count">9 trabalhos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUMÁRIO EXPANSÍVEL (ACCORDION) — VISÍVEL NO MODO SITE -->
+          <div class="site-only-toc">
+            <div class="toc-title">Sumário Completo do Volume 1 (clique para expandir)</div>
+
+            <details class="accordion">
+              <summary>Unidade I — Empreendedorismo, Inovação e Sustentabilidade em Negócios (8 capítulos)</summary>
+              <ol class="chapter-list">
+                <li>A adoção da Inteligência Artificial em micro e pequenas empresas: benefícios, barreiras e desafios no contexto brasileiro</li>
+                <li>A atitude empreendedora frente aos desafios da sustentabilidade: uma análise da gestão de negócios de impacto</li>
+                <li>A digitalização nas pequenas empresas brasileiras: benefícios, desafios e contribuições para o desempenho, a competitividade e a modernização organizacional</li>
+                <li>Distribuição dos Microempreendedores Individuais por setor no Paraná (2019-2023): mudanças no empreendedorismo pós-pandemia</li>
+                <li>Implicações da regulamentação de divulgação de sustentabilidade nas estratégias empresariais brasileiras: desafios e oportunidades no pilar ambiental e alinhamento à Agenda 2030</li>
+                <li>Networking, capital social e desempenho empreendedor no contexto brasileiro</li>
+                <li>Sazonalidade de buscas e vendas no varejo brasileiro: uma análise do potencial do Google Trends na antecipação do comportamento do consumidor</li>
+                <li>Uma revisão sistemática da literatura sobre as estratégias e as tendências do empreendedorismo digital no contexto brasileiro</li>
+              </ol>
+            </details>
+
+            <details class="accordion">
+              <summary>Unidade II — Gestão Institucional, Políticas Públicas e Desenvolvimento Humano (5 capítulos)</summary>
+              <ol class="chapter-list" start="9">
+                <li>Educação financeira e desenvolvimento de habilidades de gestão consciente dos recursos financeiros: uma revisão sistemática da literatura</li>
+                <li>Gestão de pessoas e cultura organizacional nas empresas de pequeno porte: uma revisão narrativa da literatura</li>
+                <li>Inovação na gestão de pessoas e propriedade intelectual: uma revisão sistemática da literatura sobre retenção de talentos</li>
+                <li>Transformação digital na gestão pública da saúde: Inteligência Artificial, eficiência administrativa e desafios para o SUS</li>
+                <li>Gestão por competências no ensino superior público: evidências recentes, desafios institucionais e proposição de um framework integrador</li>
+              </ol>
+            </details>
+
+            <details class="accordion">
+              <summary>Unidade III — Relatos de Pesquisa e Ensaios Acadêmicos / Resumos Expandidos (9 trabalhos)</summary>
+              <ol class="chapter-list" start="14">
+                <li>Aplicação de ferramentas da qualidade e tecnologias digitais no controle higiênico-sanitário de alimentos</li>
+                <li>Acessibilidade e permanência na Educação 4.0: mapeamento das ações institucionais na UESPI</li>
+                <li>JuVeritas, uma proposta para reduzir apropriação artística indevida do uso de Inteligência Artificial</li>
+                <li>Confiabilidade de referências científicas recomendadas por Inteligência Artificial generativa na área de Ciência e Tecnologia de Alimentos</li>
+                <li>A gestão da inovação na Educação 4.0: desafios éticos na pesquisa científica diante da Inteligência Artificial</li>
+                <li>Aplicativo web PyBibX para análise cienciométrica de artigos científicos relacionadas à utilização de e-books</li>
+                <li>Do TikTok ao Word: os desafios da educação digital na era do imediatismo</li>
+                <li>Ética e inovação na Educação 4.0: disciplina IA e Ética Humana no Sul do Piauí</li>
+                <li>Inteligência Artificial e atrofia cognitiva: abordagem reeducativa para minimizar os impactos da terceirização do pensamento</li>
+              </ol>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SLIDE 4 — VOLUME 2
+         ======================================================= -->
+    <section class="slide vol-slide-2" id="slide-4" aria-label="Volume 2">
+      <div class="container vol-layout">
+        <div class="vol-cover-frame">
+          <img src="capa-vol2.jpg" alt="Capa do Volume 2" loading="lazy" />
+        </div>
+
+        <div>
+          <span class="eyebrow vol2">Volume 2 • 2 Unidades • 20 Capítulos</span>
+          <h2>Tecnologia, Inovação Educacional e Energias Renováveis</h2>
+          <div class="meta-chips">
+            <span class="meta-chip">1ª Edição • Dez/2026</span>
+            <span class="meta-chip">Teresina, PI • Ed. dos Autores</span>
+            <span class="meta-chip">ISBN 978-65-02-51811-3</span>
+            <span class="meta-chip">CDD-378</span>
+          </div>
+
+          <div class="units-summary">
+            <div class="unit-card">
+              <div class="unit-header-row">
+                <strong>Unidade I — Educação 4.0, Inteligência Artificial e Práticas Pedagógicas</strong>
+                <span class="unit-count">13 capítulos</span>
+              </div>
+            </div>
+            <div class="unit-card">
+              <div class="unit-header-row">
+                <strong>Unidade II — Sistemas, Tecnologias Aplicadas e Energias Sustentáveis</strong>
+                <span class="unit-count">7 capítulos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUMÁRIO EXPANSÍVEL (ACCORDION) — VISÍVEL NO MODO SITE -->
+          <div class="site-only-toc">
+            <div class="toc-title">Sumário Completo do Volume 2 (clique para expandir)</div>
+
+            <details class="accordion">
+              <summary>Unidade I — Educação 4.0, Inteligência Artificial e Práticas Pedagógicas (13 capítulos)</summary>
+              <ol class="chapter-list">
+                <li>A IA generativa como copiloto pedagógico na EaD: personalização de tutorias e materiais didáticos nos ambientes virtuais de aprendizagem</li>
+                <li>Aplicação de aprendizado de máquina na predição de desempenho acadêmico: uma revisão bibliográfica</li>
+                <li>Comunicação e interação social no TEA: contribuições da Inteligência Artificial generativa</li>
+                <li>Desafios administrativos e estratégicos para a garantia da inclusão e da acessibilidade nas instituições de ensino brasileiras</li>
+                <li>Educação 4.0, inovação e ética no ensino superior em tempos de Inteligência Artificial</li>
+                <li>Gestão educacional e liderança pedagógica: a influência da atuação do gestor educacional na qualidade do ensino e nos indicadores de aprendizagem</li>
+                <li>Inovação na gestão escolar: contribuições da Inteligência Artificial generativa como ferramenta de apoio às demandas da gestão</li>
+                <li>Inteligência Artificial e ética nas pesquisas em Ciências Humanas e da Saúde: desafios para a formação</li>
+                <li>Inteligência Artificial generativa como ferramenta de apoio à prática docente</li>
+                <li>Inteligência Artificial generativa no Plano Educacional Individualizado: potencialidades e limites para a educação inclusiva</li>
+                <li>Memória e quilombos em Maricá: a Lei 10.639/03, o ODS 18 e a responsabilidade social da educação</li>
+                <li>Propriedade intelectual e inovação na extensão universitária: uma revisão sistemática sobre transferência do conhecimento e impacto social</li>
+                <li>Propriedade intelectual na educação superior: uma revisão sistemática sobre sua inserção no ensino, pesquisa e inovação</li>
+              </ol>
+            </details>
+
+            <details class="accordion">
+              <summary>Unidade II — Sistemas, Tecnologias Aplicadas e Energias Sustentáveis (7 capítulos)</summary>
+              <ol class="chapter-list" start="14">
+                <li>Aplicação de Machine Learning na previsão de lucros: uma revisão sistemática da literatura</li>
+                <li>Detector de anomalias de campo próximo com Inteligência Artificial embarcada e aprendizagem adaptativa</li>
+                <li>Inteligência Artificial e tecnologias digitais aplicadas à gestão da qualidade e à segurança dos alimentos: uma revisão integrativa</li>
+                <li>MENA: Modular Educational Notification Architecture</li>
+                <li>Plásticos em alimentos e bebidas nas praias: barreiras, alternativas sustentáveis e consumo consciente</li>
+                <li>Desenvolvimento de uma plataforma web inteligente baseada em Inteligência Artificial para apoio ao ensino de Matemática nas escolas públicas do Estado do Piauí</li>
+                <li>SORA: Software para Organização de Recursos Acadêmicos</li>
+              </ol>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SLIDE 5 — EXPEDIENTE E CONSELHO EDITORIAL
+         ======================================================= -->
+    <section class="slide" id="slide-5" aria-label="Expediente e Conselho Editorial">
+      <div class="container">
+        <span class="eyebrow">Expediente Editorial</span>
+        <h2>Organização e Conselho Editorial e Científico</h2>
+
+        <div class="organizers-grid">
+          <div class="role-card">
+            <div class="role-label">Organizadora</div>
+            <div class="role-name">Ana Angélica Fonseca Costa</div>
+          </div>
+          <div class="role-card">
+            <div class="role-label">Organizador</div>
+            <div class="role-name">Daniel César Menêses de Carvalho</div>
+          </div>
+          <div class="role-card">
+            <div class="role-label">Projeto Gráfico e Capa</div>
+            <div class="role-name">Hélio Ramon Alvarenga Ferreira</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Conselho Editorial e Científico (17 membros)</h3>
+          <ul class="board-grid">
+            <li>Adriano Olivier de Freitas e Silva</li>
+            <li>Danilo Borges da Silva</li>
+            <li>Débora Assumpção e Lima</li>
+            <li>Deusiney Robson de Araújo Farias</li>
+            <li>Edna Yoshiko Senzako</li>
+            <li>Elaine Gomes Borges</li>
+            <li>Francis de Sousa Fernandes</li>
+            <li>Juan de Aguiar Gonçalves</li>
+            <li>Jucyara Simplicio dos Santos</li>
+            <li>Laércio Ramon da Silva Nascimento</li>
+            <li>Laura Melo Barros Bona Miranda</li>
+            <li>Leydiane Gleici Oliveira Medeiros</li>
+            <li>Marcelo Helvécio Omena de Albuquerque Maximo</li>
+            <li>Mauricio Rêgo Mota da Rocha</li>
+            <li>Nouga Cardoso Batista</li>
+            <li>Samaira Cristina Souza Chagas</li>
+            <li>Sidcley D'sordi Alves Alegrini da Silva</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SLIDE 6 (TELA FINAL) — QR CODE E DOWNLOAD DIGITAL
+         ======================================================= -->
+    <section class="slide final-slide" id="slide-6" aria-label="Download Digital">
+      <div class="container">
+        <span class="eyebrow">Acesso Gratuito • Versão Digital</span>
+        <h2>Baixe os Volumes 1 e 2 Agora</h2>
+        <p class="lead" style="margin: 0 auto;">
+          Aponte a câmera do seu celular para o QR Code abaixo ou clique no botão para acessar a pasta oficial com os livros completos em PDF.
+        </p>
+
+        <div class="qr-card">
+          <canvas id="qrcode-canvas" width="260" height="260" aria-label="QR Code para download dos Volumes 1 e 2"></canvas>
+          <a id="downloadLink" class="btn-download" href="#" target="_blank" rel="noopener noreferrer">
+            ⬇ Acessar Pasta dos Livros (Google Drive)
+          </a>
+          <p class="final-note">
+            Universidade Aberta do Piauí (UAPI) • Universidade Estadual do Piauí (UESPI)<br />
+            II Jornada Científica da UAPI — 2026
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    /* =========================================================
+       CONFIGURAÇÃO DO LINK DE DOWNLOAD (GOOGLE DRIVE)
+       Para alterar o link no futuro, basta editar a linha abaixo.
+       ========================================================= */
+    const LINK_DOWNLOAD_LIVROS = "https://drive.google.com/drive/folders/1S2HC5VFHWBekWyIRe6mrDIOlw6DFG41w?usp=drive_link";
+
+    /* =========================================================
+       CONTROLE DE MODO APRESENTAÇÃO / MODO SITE E ATALHOS
+       ========================================================= */
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const btnToggleMode = document.getElementById("btnToggleMode");
+    const btnPrev = document.getElementById("btnPrev");
+    const btnNext = document.getElementById("btnNext");
+    const btnFullscreen = document.getElementById("btnFullscreen");
+    const slideCounter = document.getElementById("slideCounter");
+    const downloadLink = document.getElementById("downloadLink");
+
+    downloadLink.href = LINK_DOWNLOAD_LIVROS;
+
+    let isPresentation = false;
+    let currentSlide = 0;
+
+    function updateSlideView() {
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === currentSlide));
+      slideCounter.textContent = `${currentSlide + 1} / ${slides.length}`;
+      btnPrev.disabled = currentSlide === 0;
+      btnNext.disabled = currentSlide === slides.length - 1;
+      btnPrev.style.opacity = currentSlide === 0 ? "0.45" : "1";
+      btnNext.style.opacity = currentSlide === slides.length - 1 ? "0.45" : "1";
+    }
+
+    function setPresentationMode(enable) {
+      isPresentation = enable;
+      document.body.classList.toggle("presentation-mode", enable);
+      btnToggleMode.textContent = enable ? "🌐 Modo Site" : "▶ Modo Apresentação";
+      if (enable) {
+        updateSlideView();
+      } else if (document.fullscreenElement) {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlideView();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlideView();
+      }
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    btnToggleMode.addEventListener("click", () => setPresentationMode(!isPresentation));
+    btnNext.addEventListener("click", nextSlide);
+    btnPrev.addEventListener("click", prevSlide);
+    btnFullscreen.addEventListener("click", toggleFullscreen);
+
+    document.addEventListener("keydown", (e) => {
+      if (!isPresentation) return;
+      if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === "f" || e.key === "F") {
+        e.preventDefault();
+        toggleFullscreen();
+      } else if (e.key === "Escape") {
+        if (!document.fullscreenElement) {
+          setPresentationMode(false);
